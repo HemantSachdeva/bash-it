@@ -1,0 +1,5 @@
+#!/bin/bash
+# Above is the shebang line which tells the shell
+# what kind of script we are running
+
+echo "Hello $USER Get ready to bash!"
