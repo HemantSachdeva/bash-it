@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 21/05/2021
+
+# Description: 
+# Creates a backup tar file in folder given as 2nd arguement for all the files present in the directory given in 1st arguement
+
+# Usage: 
+# bash backup_script ~/work ~/backup
+# Here backup of ~/work directory will be saved in ~/backup directory 
+
+currently_in=$pwd
+cd $1/..
+tar -cvf backup_"$(date +%d-%m-%Y_%H-%M-%S).tar" $1
+mv *tar $2
+cd $currently_in
+
+# Last Modified: 21/05/2021
