@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 07/06/2021
+
+# Description:
+# Shorten any github profile/repo/commit/blob/raw content to a custom link followed by https://git.io/
+# if that custom link is available
+
+# Usage:
+# bash shorten git/url/to/be/shorten customText
+
+# bash shorten https://github.com/HemantSachdeva HemantSachdeva
+# so the shorten url will be https://git.io/HemantSachdeva
+
+curl -i https://git.io -F "url=$1" -F "code=$2"
+
+# Last Modified: 07/06/2021
