@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 12/06/2021
+
+read -rp "Enter a number: " num
+
+if [ $((num % 2)) -eq 0 ]; then
+    echo "$num is even."
+else 
+    echo "$num is odd."
+fi
+
+# Last Modified: 12/06/2021
