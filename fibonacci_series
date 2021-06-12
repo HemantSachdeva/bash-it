@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 12/06/2021
+
+read -rp "How many number of terms to be generated: " n
+
+function fib {
+    x=0
+    y=1
+    i=2
+    echo "Fibonacci Series up to $n terms: "
+    echo "$x"
+    echo "$y"
+    while [ $i -lt $n ]; do
+        i=$(expr $i + 1)
+        z=$(expr $x + $y)
+        echo "$z"
+        x=$y
+        y=$z
+    done
+}
+r=$(fib $n)
+echo "$r"
+
+# Last Modified: 12/06/2021
