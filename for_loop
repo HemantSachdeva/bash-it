@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 12/06/2021
+
+for i in {1..10}; do
+    echo $i
+done
+
+# Last Modified: 12/06/2021
