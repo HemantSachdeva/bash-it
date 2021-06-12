@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 12/06/2021
+
+read -rp "Enter a number: " num
+fact=1
+init=$num
+
+while [ $num -gt 1 ]; do
+    fact=$((fact * num))
+    num=$((num - 1))
+done
+
+echo "Factorial of $init = $fact"
+
+# Last Modified: 12/06/2021
