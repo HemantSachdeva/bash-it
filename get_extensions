@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 28/06/2021
+
+read -p "What is your first name?: " firstname
+read -p "What is your surname/family name?: " lastname
+echo "Note: Your extension number and access code must both be exactly 4 digits long."
+read -n 4 -p "What is your extension numbers?: " extension
+echo ""
+read -n 4 -s -p "What access code would you like to use when dialing in?: " access
+
+echo ""
+echo "Thanks!!"
+
+echo "$firstname,$lastname,$extension,$access" >> extensions.csv
+
+# Last Modified: 28/06/2021
