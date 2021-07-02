@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 02/07/2021
+
+PS3="What is the day of the week?: " # Prompts the user before selecting option from menu
+select day in mon tue wed thu fri sat sun;
+do
+    echo "Ok so today is $day."
+    break
+done
+
+# Last Modified: 02/07/2021
