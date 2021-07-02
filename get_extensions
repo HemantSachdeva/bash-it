@@ -5,14 +5,36 @@
 
 read -p "What is your first name?: " firstname
 read -p "What is your surname/family name?: " lastname
+
+PS3="Which phone you are comfortable with?: "
+select phone in handheld headset;
+do
+    echo "You selected $phone phone."
+    echo
+    read -p "Is it correct?[y|n]: " option
+    case $option in
+    Y | y) echo "Okay thanks for confirming."
+            break ;;
+    esac
+done
+PS3="In which department do you work?: "
+select department in finance sales "customer service" engineering;
+do
+    echo "You selected $department."
+    read -p "Is it correct?[y|n]: " option
+    case $option in
+    Y | y) echo "Okay thanks for confirming."
+            break ;;
+    esac
+done
 echo "Note: Your extension number and access code must both be exactly 4 digits long."
 read -n 4 -p "What is your extension numbers?: " extension
 echo ""
 read -n 4 -s -p "What access code would you like to use when dialing in?: " access
 
-echo ""
+echo
 echo "Thanks!!"
 
-echo "$firstname,$lastname,$extension,$access" >> extensions.csv
+echo "$firstname,$lastname,$phone,$department,$extension,$access" >> extensions.csv
 
 # Last Modified: 28/06/2021
