@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 03/07/2021
+
+if [ -d $HOME/performance ] 
+then
+    echo Folder exists.
+else
+    mkdir $HOME/performance
+fi
+
+free >> $HOME/performance/memory.log
+
+# Last Modified: 03/07/2021
