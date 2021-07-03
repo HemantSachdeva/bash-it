@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 03/07/2021
+
+PS3="Select a city from above to travel: "
+select city in Tokyo London "Los Angeles" Moscow Dubai Manchester "New York" Paris Bangalore Johannesburg Istanbul Milan "Abu Dhabi" Pune Nairobi Berlin Karachi; do
+    case $city in
+    Tokyo)
+        country=Japan
+        ;;
+    London | Manchester)
+        country="United Kingdom"
+        ;;
+    Moscow)
+        country=Russia
+        ;;
+    Dubai | "Abu Dhabi")
+        country="United Arab Emirates"
+        ;;
+    Paris)
+        country=France
+        ;;
+    Bangalore | Pune)
+        country=India
+        ;;
+    Johannesburg)
+        country="South Africa"
+        ;;
+    Istanbul)
+        country=Turkey
+        ;;
+    Milan)
+        country=Italy
+        ;;
+    Nairobi)
+        country=Kenya
+        ;;
+    Berlin)
+        country=Germany
+        ;;
+    Karachi)
+        country=Pakistan
+        ;;
+    Madrid)
+        country=Spain
+        ;;
+    esac
+echo "$city is in $country"
+break
+done
+
+# Last Modified: 03/07/2021
