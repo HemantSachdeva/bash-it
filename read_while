@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 06/07/2021
+
+while read line ; do
+    mkdir -p "$line"
+done < "$1"
+
+# Last Modified: 06/07/2021
