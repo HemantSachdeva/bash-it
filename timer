@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 06/07/2021
+
+while getopts "m:s:" opt; do
+    case $opt in
+    m)
+        total_seconds=$(( total_seconds + $(( OPTARG * 60 )) )) # OPTARG stores the flag provided in command b user
+        ;;
+    s)
+        total_seconds=$(( total_seconds + OPTARG ))
+        ;;
+    *)
+        echo "You have given a wrong flag. Use -m for minutes and -s for seconds"
+        ;;
+    esac
+done
+
+while [[ $total_seconds -ge 0 ]] ; do
+    echo "$total_seconds seconds left"
+    total_seconds=$(( total_seconds - 1 ))
+    sleep 1s
+done
+
+echo "Time's Up!"
+
+# Last Modified: 06/07/2021
