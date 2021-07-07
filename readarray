@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 07/07/2021
+
+readarray -t urls < urls.txt
+
+for urls in "${urls[@]}" ; do
+    curl --head "$urls" > "$(echo $urls | cut -d "." -f 2)".txt
+done
+
+# Last Modified: 07/07/2021
