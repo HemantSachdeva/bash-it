@@ -1,19 +1,26 @@
 #!/bin/bash
 
+# Author: Hemant Sachdeva <hemant.evolver@gmail.com>
+# Date Created: 21/07/2021
+
 while getopts "nf:" param; do
   case "$param" in
   f) file="$OPTARG" ;;
-  v) set -x ;;
+  n) set -x ;;
+  *) echo "Invalid option" ;;
   esac
 done
 
 case "$file" in
+*.tar.gz) tar xzf "$file" ;;
 *.gz) gzip -d "$file" ;;
 *.zip) unzip "$file" ;;
-*.tar.gz) tar xzf "$file" ;;
 *) echo "Unknown filetype" ;;
 esac
 
-if [[ "$$(uname)" == "Linux" ]]; then
+if [[ "$(uname)" == "Linux" ]]; then
   echo "Using Linux"
 fi
+
+
+# Last Modified: 21/07/2021
